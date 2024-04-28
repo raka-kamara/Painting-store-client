@@ -37,13 +37,14 @@ const AuthProvider = ({children}) => {
 
     // signOut
     const logOut = () =>{
-        // setLoading(true);
+         setLoading(true);
         setUser(null)
         return signOut(auth);
     }
 
     // google login
     const googleLogin = () =>{
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
     
@@ -58,9 +59,11 @@ const AuthProvider = ({children}) => {
 
     useEffect(() =>{
         onAuthStateChanged(auth,(user) =>{
+           
             if(user){
                 setUser(user)
-            }
+            } 
+            setLoading(false);
         });
     },[])
     const userInfo ={

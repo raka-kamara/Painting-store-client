@@ -53,7 +53,7 @@ const Navbar = () => {
       </li>
       <li className="flex ">
         <NavLink
-          to="/user"
+          to="/myPainting"
           className={({ isActive }) =>
             isActive
               ? "text-white bg-gradient-to-r from-blue-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% font-bold border border-white"

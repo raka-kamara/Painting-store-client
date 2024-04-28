@@ -5,6 +5,8 @@ import AddPainting from "../pages/AddPainting";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
 import MyPainting from "../pages/MyPainting";
+import Details from "../Components/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addPainting',
-                element: <AddPainting></AddPainting>
+                element: <PrivateRoute><AddPainting></AddPainting></PrivateRoute>
             },
             {
                 path: '/login',
@@ -30,7 +32,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myPainting',
-                element: <MyPainting></MyPainting>
+                element: <PrivateRoute><MyPainting></MyPainting></PrivateRoute>
+            },
+            {
+                path: '/details',
+                element: <PrivateRoute><Details></Details></PrivateRoute>
             },
         ]
     }

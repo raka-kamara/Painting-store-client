@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Paintings = ({ painting }) => {
   const { name, price, rating, customization, stock, photo } = painting;
   return (
@@ -14,9 +16,7 @@ const Paintings = ({ painting }) => {
           <h2 className="card-title">{name}</h2>
           <p>Click the button to watch on Jetflix app.</p>
           <div className="card-actions ">
-            <button className="btn">View</button>
-            <button className="btn">Edit</button>
-            <button className="btn bg-orange-500">X</button>
+          <Link to="/details">  <button className="btn">View</button></Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
@@ -11,6 +11,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const {signInUser, googleLogin, FBSignIn} = useAuth();
     const [showPass, setShowPass] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -21,6 +24,8 @@ const Login = () => {
         signInUser(email, password)
         .then((result) => {
         console.log(result.user);
+
+        navigate(location?.state ? location.state : '/');
 
        
       })
@@ -36,6 +41,7 @@ const Login = () => {
         googleLogin()
           .then((result) => {
             console.log(result.user);
+            navigate(location?.state ? location.state : '/');
           })
           .catch((error) => {
             console.log("error", error.message);
@@ -46,6 +52,7 @@ const Login = () => {
         FBSignIn()
           .then((result) => {
             console.log(result.user);
+            navigate(location?.state ? location.state : '/');
           })
           .catch((error) => {
             console.log("error", error.message);
