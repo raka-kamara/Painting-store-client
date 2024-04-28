@@ -4,14 +4,32 @@ import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import { LuEye } from "react-icons/lu";
 import { FaRegEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false);
 
     const handleLogin = e =>{
-        e.preventDefault()
-    }
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get("email");
+        const password = form.get("password");
+
+        signInUser(email, password)
+        .then((result) => {
+        console.log(result.user);
+
+       
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+        
+    };
+
+
     const handleGoogleSignIn = e =>{
         e.preventDefault()
     }
@@ -78,7 +96,7 @@ const Login = () => {
         </div>
         <p className="text-center mt-4">
           Do not have an account{" "}
-          <Link className="text-blue-600 font-bold" to="/register">
+          <Link className="text-blue-600 font-bold" to="/signUp">
             Register
           </Link>
         </p>
