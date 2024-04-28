@@ -1,17 +1,21 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword,  signInWithPopup,  signOut,  updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
+
 
 const auth = getAuth(app);
 
 
 export const AuthContext = createContext(null);
 
+const googleProvider = new GoogleAuthProvider();
+const FBProvider = new FacebookAuthProvider();
+
 const AuthProvider = ({children}) => {
     const[user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
-    console.log(user)
+   
    
     // create user
     const createUser = (email, password) =>{
@@ -23,7 +27,35 @@ const AuthProvider = ({children}) => {
     const signInUser =(email, password)=>{
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
+    };
+
+    // FBsignIn 
+    const FBSignIn = (email, password) =>{
+        setLoading(true);
+        return signInWithPopup(auth, FBProvider)
     }
+
+    // signOut
+    const logOut = () =>{
+        // setLoading(true);
+        setUser(null)
+        return signOut(auth);
+    }
+
+    // google login
+    const googleLogin = () =>{
+        return signInWithPopup(auth, googleProvider);
+    };
+    
+
+      // update profile 
+      const updateUserProfile = (obj) => {
+        setLoading(true)
+        return updateProfile(auth.currentUser, obj)
+
+    };
+     console.log(updateProfile)
+
     useEffect(() =>{
         onAuthStateChanged(auth,(user) =>{
             if(user){
@@ -35,7 +67,11 @@ const AuthProvider = ({children}) => {
         user,
         loading,
         createUser,
-        signInUser
+        signInUser,
+        googleLogin,
+        updateUserProfile,
+        logOut,
+        FBSignIn
     }
 
     return (

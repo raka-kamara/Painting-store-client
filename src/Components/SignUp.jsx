@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
 import { LuEye } from "react-icons/lu";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useAuth from "../hooks/useAuth";
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useAuth();
     const [error, setError] = useState("");
     const [showPass, setShowPass] = useState(false);
 
@@ -40,8 +40,8 @@ const SignUp = () => {
 
         createUser(email, password)
             .then(result =>{
+                updateUserProfile({displayName:name, photoUrl:photo})
                 console.log(result.user);
-                const user ={email, name, photo};
                 toast.success("Registration successful!");
          })
         .catch(error =>{

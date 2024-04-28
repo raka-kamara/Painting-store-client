@@ -1,7 +1,17 @@
 
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
+  const {user, logOut} = useAuth();
+
+  const handleSignOut = () =>{
+    logOut()
+    .then()
+    .catch(error =>{
+      console.log(error);
+  })
+}
 
     const navLinks = (
         <>
@@ -50,11 +60,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-        
-            <Link to="/login"><a className="btn  bg-gradient-to-r from-indigo-500 from-10% via-yellow-500 via-30% to-emerald-500 to-90%  text-white">Log In</a></Link>
+        {
+      user ?
+      <a className="btn bg-[#a38138] text-white">{user.email}</a>
+      :
+      <Link to="/login"><a className="btn bg-[#a38138] text-white">Log In</a></Link>
+    }
+    
           
           
-          <a className="btn bg-gradient-to-r from-yellow-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  text-white">Log Out</a>
+          <a onClick={handleSignOut} className="btn bg-gradient-to-r from-yellow-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  text-white">Log Out</a>
         </div>
         
       </div>

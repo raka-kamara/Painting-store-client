@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import { LuEye } from "react-icons/lu";
 import { FaRegEyeSlash } from "react-icons/fa";
-import { useContext, useState } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+import {useState } from "react";
+import useAuth from "../hooks/useAuth";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const {signInUser} = useContext(AuthContext);
+    const {signInUser, googleLogin} = useAuth();
     const [showPass, setShowPass] = useState(false);
 
     const handleLogin = e =>{
@@ -24,15 +25,23 @@ const Login = () => {
        
       })
       .catch((error) => {
+        toast("Check if Email and password is correct", { autoClose: 2000 });
         console.log("error", error.message);
       });
         
     };
 
 
-    const handleGoogleSignIn = e =>{
-        e.preventDefault()
-    }
+    const handleGoogleSignIn = () => {
+        googleLogin()
+          .then((result) => {
+            console.log(result.user);
+          })
+          .catch((error) => {
+            console.log("error", error.message);
+          });
+      };
+    
     const handleFBignIn = e =>{
         e.preventDefault()
     }
@@ -101,7 +110,7 @@ const Login = () => {
           </Link>
         </p>
       </div>
-      <ToastContainer className="toast toast-middle bg-amber-100"></ToastContainer>
+      <ToastContainer></ToastContainer>
     </div>
     );
 };
