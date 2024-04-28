@@ -9,7 +9,7 @@ import useAuth from "../hooks/useAuth";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const {signInUser, googleLogin} = useAuth();
+    const {signInUser, googleLogin, FBSignIn} = useAuth();
     const [showPass, setShowPass] = useState(false);
 
     const handleLogin = e =>{
@@ -42,9 +42,15 @@ const Login = () => {
           });
       };
     
-    const handleFBignIn = e =>{
-        e.preventDefault()
-    }
+      const handleFBignIn = () => {
+        FBSignIn()
+          .then((result) => {
+            console.log(result.user);
+          })
+          .catch((error) => {
+            console.log("error", error.message);
+          });
+      };
 
     return (
         <div>
