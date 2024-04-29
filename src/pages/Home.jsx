@@ -4,6 +4,7 @@ import BestSelling from "../Components/BestSelling";
 import { Fade } from "react-awesome-reveal";
 import OurClasses from "../Components/OurClasses";
 import Paintings from "../Components/Paintings";
+import SubCategory from "../Components/SubCategory";
 
 
 
@@ -23,6 +24,7 @@ const Home = () => {
                 ></Paintings>)
             }
             </div>
+            <SubCategory></SubCategory>
             
             <BestSelling></BestSelling>
             <OurClasses></OurClasses>

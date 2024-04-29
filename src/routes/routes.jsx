@@ -11,6 +11,7 @@ import Paintings from "../Components/Paintings";
 import Crafts from "../Components/Crafts";
 import UpdateMyPainting from "../pages/UpdateMyPainting";
 import ErrorPage from "../pages/ErrorPage";
+import SubCategory from "../Components/SubCategory";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("http://localhost:5000/painting"),
+      },
+      {
+        path: "/",
+        element: <SubCategory></SubCategory>,
+        loader: () => fetch("http://localhost:5000/category"),
       },
       {
         path: "/addPainting",
