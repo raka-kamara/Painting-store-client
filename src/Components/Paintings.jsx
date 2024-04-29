@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Paintings = ({ painting }) => {
-  const { name, price, rating, customization, stock, photo } = painting;
+  const {_id, name, price, rating, customization, stock, photo } = painting;
   return (
     <div className="">
       
@@ -17,7 +17,7 @@ const Paintings = ({ painting }) => {
           <p>Price: {price} Stock: {stock}</p>
           <p>Rating: {rating} </p>
           <div className="card-actions ">
-          <Link to="/details">  <button className="btn">View</button></Link>
+          <Link to={`/update/${_id}`}>  <button className="btn">View</button></Link>
           </div>
         </div>
       </div>

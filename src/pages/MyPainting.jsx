@@ -17,9 +17,7 @@ const MyPainting = () => {
       });
   }, [user]);
 
- const handleUpdate = (_id) =>{
-
- }
+ 
 
   const handleDelete = (_id) => {
     console.log(_id);
@@ -89,10 +87,10 @@ const MyPainting = () => {
             <p>Description: {p.description}</p>
             <p>Customization: {p.customization}</p>
             <div className="card-actions ">
-              <Link to="/details">
+              <Link to={`/update/${p._id}`}>
                 <button className="btn">View Details</button>
               </Link>
-              <Link><button onClick={handleUpdate} className="btn">Edit</button></Link>
+              <Link to={`/details/${p._id}`}><button  className="btn">Edit</button></Link>
               <button
                 onClick={() => handleDelete(p._id)}
                 className="btn bg-orange-500"

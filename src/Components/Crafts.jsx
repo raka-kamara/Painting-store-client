@@ -20,7 +20,7 @@ const Crafts = () => {
                 <p>Description: {painting.description}</p>
                 <p>Price: {painting.price}</p>
                 <div className="card-actions ">
-                  <Link to={`/details`}>
+                  <Link to={`/update/${painting._id}`}>
                     {" "}
                     <button className="btn">View</button>
                   </Link>

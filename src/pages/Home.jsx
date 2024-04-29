@@ -10,7 +10,7 @@ import Paintings from "../Components/Paintings";
 const Home = () => {
     const paintings = useLoaderData();
     return (
-        <div>
+        <div className="p-5">
             <Banner></Banner>
            <Fade> <h1 className="text-center font-bold text-2xl mt-20
              bg-gradient-to-r from-blue-500 from-10% via-yellow-500 via-30% to-emerald-500 to-90% text-transparent bg-clip-text">Select Your desired Paintings</h1></Fade>

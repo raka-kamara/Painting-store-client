@@ -48,10 +48,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/details",
+        path: "/details/:id",
         element: (
           <PrivateRoute>
             <Details></Details>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateMyPainting></UpdateMyPainting>
           </PrivateRoute>
         ),
       },
