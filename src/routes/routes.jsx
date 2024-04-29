@@ -12,6 +12,8 @@ import Crafts from "../Components/Crafts";
 import UpdateMyPainting from "../pages/UpdateMyPainting";
 import ErrorPage from "../pages/ErrorPage";
 import SubCategory from "../Components/SubCategory";
+import AddCategory from "../pages/AddCategory";
+import CategoryDetails from "../pages/CategoryDetails";
 
 const router = createBrowserRouter([
   {
@@ -27,13 +29,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <SubCategory></SubCategory>,
-        loader: () => fetch("http://localhost:5000/category"),
       },
       {
         path: "/addPainting",
         element: (
           <PrivateRoute>
             <AddPainting></AddPainting>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addCategory",
+        element: (
+          <PrivateRoute>
+            <AddCategory></AddCategory>
           </PrivateRoute>
         ),
       },
@@ -62,6 +71,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/categoryDetails/:id",
+        element: (
+          <PrivateRoute>
+            <CategoryDetails></CategoryDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/update/:id",
         element: (
           <PrivateRoute>
@@ -72,9 +89,7 @@ const router = createBrowserRouter([
       {
         path: "/crafts",
         element: (
-          <PrivateRoute>
             <Crafts></Crafts>
-          </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/painting"),
       },

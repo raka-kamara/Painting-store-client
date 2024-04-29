@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const UpdateMyPainting = () => {
+const CategoryDetails = () => {
     const { id } = useParams();
-  console.log(id);
-  const [product, setProduct] = useState({});
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/singleProduct/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-        console.log(data);
-      });
-  }, [id]);
-
-    
+    console.log(id);
+    const [product, setProduct] = useState({});
+  
+    useEffect(() => {
+      fetch(`http://localhost:5000/singleCategory/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setProduct(data);
+          console.log(data);
+        });
+    }, [id]);
     return (
         <div className="container my-24 mx-auto ">
         <div className="card bg-base-100 shadow-xl md:w-fit mx-auto">
@@ -55,4 +53,4 @@ const UpdateMyPainting = () => {
     );
 };
 
-export default UpdateMyPainting;
+export default CategoryDetails;
