@@ -1,12 +1,13 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const Crafts = () => {
   const paintings = useLoaderData();
   return (
     <div className="w-full">
-      <h1 className=" text-center font-bold text-3xl my-20 bg-gradient-to-r from-red-500 from-10% via-yellow-500 via-30% to-emerald-500 to-90% text-transparent bg-clip-text">
+     <Fade> <h1 className=" text-center font-bold text-3xl my-20 bg-gradient-to-r from-red-500 from-10% via-yellow-500 via-30% to-emerald-500 to-90% text-transparent bg-clip-text">
         All Paintings
-      </h1>
+      </h1></Fade>
       <ul className="grid md:grid-cols-2 gap-10">
         {paintings.map((painting, index) => (
           <li key={index}>
