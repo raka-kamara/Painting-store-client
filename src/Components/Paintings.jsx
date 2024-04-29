@@ -14,7 +14,8 @@ const Paintings = ({ painting }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
-          <p>Click the button to watch on Jetflix app.</p>
+          <p>Price: {price} Stock: {stock}</p>
+          <p>Rating: {rating} </p>
           <div className="card-actions ">
           <Link to="/details">  <button className="btn">View</button></Link>
           </div>

@@ -7,7 +7,7 @@ const OurClasses = () => {
 
 */}
         <h1 className="text-center font-bold text-3xl mt-20 mb-5
-        bg-gradient-to-r from-red-500 from-10% via-yellow-500 via-30% to-emerald-500 to-90% text-transparent bg-clip-text">Join Our Classes</h1>
+        bg-gradient-to-r from-red-500 from-10% via-yellow-500 via-30% to-emerald-500 to-90% text-transparent bg-clip-text">We Provide Painting Classes</h1>
       <div className="grid md:grid-cols-3 justify-center">
         <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
           <img

@@ -15,22 +15,22 @@ const Banner = () => {
     <div className="relative flex flex-shrink-0 w-full sm:w-auto">
                         <img className="object-cover object-center dark:bg-gray-500 h-96 aspect-square" src="https://i.ibb.co/CMRVWhH/B5.jpg" alt="Image 1" />
                         <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-4">
-                            <p className="text-lg font-semibold">Image 1 Text</p>
-                            <p className="text-sm">Description or additional information about Image 1</p>
+                            <p className="text-lg font-semibold">Explore Our Products</p>
+                            <p className="text-sm">Join our painting classes and get special discounts</p>
                         </div>
                     </div>
 		<div className="relative flex flex-shrink-0 w-full sm:w-auto">
         <div className="absolute top-0 left-0 right-0 bg-white bg-opacity-75 p-4">
-                            <p className="text-lg font-semibold">Image 1 Text</p>
-                            <p className="text-sm">Description or additional information about Image 1</p>
+                            <p className="text-lg font-semibold">Explore Our Products</p>
+                            <p className="text-sm">Join our painting classes and get special discounts</p>
                         </div>
 			<img className="object-cover object-center dark:bg-gray-500 h-96 aspect-square" src="https://i.ibb.co/vz9wSPP/b3.jpg" alt="Image 2" />
 		</div>
 		<div className="relative flex flex-shrink-0 w-full sm:w-auto">
 			<img className="object-cover object-center dark:bg-gray-500 h-96 aspect-square" src="https://i.ibb.co/wKBryWH/Banner1-2.jpg" alt="Image 3" />
              <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-4">
-                            <p className="text-lg font-semibold">Image 1 Text</p>
-                            <p className="text-sm">Description or additional information about Image 1</p>
+                            <p className="text-lg font-semibold">Explore Our Products</p>
+                            <p className="text-sm">Join our painting classes and get special discounts</p>
                         </div>
 		</div>
 
@@ -38,8 +38,8 @@ const Banner = () => {
 			<img className="object-cover object-center dark:bg-gray-500 h-96 aspect-square" src="https://i.ibb.co/HPpTrvP/B2.jpg" alt="Image 4" />
 
             <div className="absolute top-0 left-0 right-0 bg-white bg-opacity-75 p-4">
-                            <p className="text-lg font-semibold">Image 1 Text</p>
-                            <p className="text-sm">Description or additional information about Image 1</p>
+                            <p className="text-lg font-semibold">Explore Our Products</p>
+                            <p className="text-sm">Join our painting classes and get special discounts</p>
                         </div>
 
 		</div>
@@ -47,8 +47,8 @@ const Banner = () => {
 		<div className="relative flex flex-shrink-0 w-full sm:w-auto">
 			<img className="object-cover object-center dark:bg-gray-500 h-96 aspect-square" src="https://i.ibb.co/DQ0QbtB/B4.jpg" alt="Image 5" />
             <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-4">
-                            <p className="text-lg font-semibold">Image 1 Text</p>
-                            <p className="text-sm">Description or additional information about Image 1</p>
+                            <p className="text-lg font-semibold">Explore Our Products</p>
+                            <p className="text-sm">Join our painting classes and get special discounts</p>
                         </div>
 		</div>
 
