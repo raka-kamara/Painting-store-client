@@ -14,6 +14,7 @@ import ErrorPage from "../pages/ErrorPage";
 import SubCategory from "../Components/SubCategory";
 import AddCategory from "../pages/AddCategory";
 import CategoryDetails from "../pages/CategoryDetails";
+import ShowCategory from "../pages/ShowCategory";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyPainting></MyPainting>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/showCategory/:category",
+        element: (
+          <PrivateRoute>
+            <ShowCategory></ShowCategory>
           </PrivateRoute>
         ),
       },

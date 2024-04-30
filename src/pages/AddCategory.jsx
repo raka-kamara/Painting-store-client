@@ -1,5 +1,10 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
+
 const AddCategory = () => {
+
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const handleAddPainting = (event) => {
     event.preventDefault();
 
@@ -46,6 +51,8 @@ const AddCategory = () => {
           });
         }
       });
+    form.reset();
+    setSelectedCategory("");
   };
   return (
     <div className="bg-gradient-to-r from-slate-300 from-10% via-sky-300 via-30% to-yellow-100 to-90% p-24">
@@ -66,7 +73,7 @@ const AddCategory = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Landscape,portrait, cartoon, etc"
+                placeholder="Name"
                 className="input input-bordered w-full"
               />
             </label>
@@ -87,19 +94,27 @@ const AddCategory = () => {
         </div>
         {/* form subCategory and shortDescription row */}
         <div className="md:flex mb-8 ">
-          <div className="form-control w-full md:w-1/2">
+          {/* Sub Category Dropdown */}
+          <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Sub Category</span>
             </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="category"
-                placeholder="Enter Your Kind of Painting"
-                className="input input-bordered w-full"
-              />
-            </label>
+            <select
+              name="category"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="input input-bordered w-full"
+            >
+              <option value="">Select a category...</option>
+              <option value="Landscape Painting">Landscape Painting</option>
+              <option value="Portrait Drawing">Portrait Drawing</option>
+              <option value="Watercolour Painting">Watercolour Painting</option>
+              <option value="Oil Painting">Oil Painting</option>
+              <option value="Charcoal Sketching">Charcoal Sketching</option>
+              <option value="Cartoon Drawing">Cartoon Drawing</option>
+            </select>
           </div>
+
           <div className="form-control w-full  md:w-1/2 ml-4">
             <label className="label">
               <span className="label-text">Short Description</span>
