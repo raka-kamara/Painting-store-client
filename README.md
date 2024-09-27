@@ -1,8 +1,8 @@
-# React + Vite
+Live Link: https://painting-store-3c75c.web.app/
+B9 A10 Type-02 Requirements
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. React-simple-typewrite, react-awesome-reveal, swiper added
+2. user login, logout, google login, register, fb login implemented
+3. user can add specific category painting then fetch those painting through category
+4. 2 database collection has been created one for add painting another for add category painting
+5. private link implemented 
